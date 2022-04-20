@@ -1,0 +1,285 @@
+{
+	"info": {
+		"_postman_id": "873f28ff-1128-4feb-8487-8367f527de9b",
+		"name": "orderAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"sunil1.kamble@gmail.com\",\n    \"pwd\": \"pass1234\",\n    \"fname\": \"rachna\",\n    \"lname\": \"jaju\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://yjix2l16g9.execute-api.ap-south-1.amazonaws.com/dev/createuser",
+					"protocol": "https",
+					"host": [
+						"yjix2l16g9",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"createuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add product",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": {\n        \"price\": \"10\",\n        \"prod_name\": \"dairymilk\",\n        \"quantity_available\": \"1000\",\n        \"supplier_email\": \"sunil1.kamble@gmail.com\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://yjix2l16g9.execute-api.ap-south-1.amazonaws.com/dev/createeditproduct",
+					"protocol": "https",
+					"host": [
+						"yjix2l16g9",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"createeditproduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": {\n        \"price\": \"10\",\n        \"prod_name\": \"kitkat\",\n        \"quantity_available\": \"1000\",\n        \"supplier_email\": \"sunil.kamble@forcepoint.com\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/getalliproducts?email=sunil.kamble@gmail.com&tab=published",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getalliproducts"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "sunil.kamble@gmail.com"
+						},
+						{
+							"key": "tab",
+							"value": "published"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete product",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": {\n        \"price\": \"10\",\n        \"prod_name\": \"kitkat\",\n        \"quantity_available\": \"1000\",\n        \"supplier_email\": \"sunil.kamble@forcepoint.com\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://yjix2l16g9.execute-api.ap-south-1.amazonaws.com/dev/deleteproduct?email=sunil1.kamble@gmail.com&item_id=12",
+					"protocol": "https",
+					"host": [
+						"yjix2l16g9",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"deleteproduct"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "sunil1.kamble@gmail.com"
+						},
+						{
+							"key": "item_id",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://yjix2l16g9.execute-api.ap-south-1.amazonaws.com/dev/userlogin?email=sunil1.kamble@gmail.com&pwd=pass1234",
+					"protocol": "https",
+					"host": [
+						"yjix2l16g9",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"userlogin"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "sunil1.kamble@gmail.com"
+						},
+						{
+							"key": "pwd",
+							"value": "pass1234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "demoapi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "add order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"email\": \"sunil1.kamble@gmail.com\",\n    \"item_id\": \"8\",\n    \"order_status\": \"ordered\",\n    \"quantity\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://yjix2l16g9.execute-api.ap-south-1.amazonaws.com/dev/orderitem",
+					"protocol": "https",
+					"host": [
+						"yjix2l16g9",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"orderitem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://yjix2l16g9.execute-api.ap-south-1.amazonaws.com/dev/getordereditems?email=sunil1.kamble@gmail.com",
+					"protocol": "https",
+					"host": [
+						"yjix2l16g9",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"getordereditems"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "sunil1.kamble@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
